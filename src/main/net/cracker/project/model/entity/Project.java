@@ -5,20 +5,33 @@ import java.util.Collection;
 import java.util.Date;
 import main.net.cracker.project.model.ProjectDAO;
 
-public class Project implements ProjectDAO{
+public class Project implements ProjectDAO {
 
   private BigInteger projectId;
   private String name;
   private Date startDate;
   private Date endDate;
-  private Boolean status;
+  private ProjectStatus status;
   private BigInteger projectManager;
   private Collection<User> users;
   private Collection<Task> tasks;
   private Sprint sprint;
 
-  public Boolean createProject(Project project) {
-    return null;
+
+  public void createProject(Project project) {
+
+  }
+
+  public void deleteUserByUserId(BigInteger userId, BigInteger projectID) {
+
+  }
+
+  public void updateProject(BigInteger id, Project project) {
+
+  }
+
+  public void addUser(BigInteger userId, BigInteger projectId) {
+
   }
 
   public Project findProjectByProjectId(BigInteger id) {
@@ -32,19 +45,6 @@ public class Project implements ProjectDAO{
   public Project findProjectByDate(Date startDate) {
     return null;
   }
-
-  public Boolean deleteUserByUserId(BigInteger userId, BigInteger projectID) {
-    return null;
-  }
-
-  public Boolean updateProject(BigInteger id, Project project) {
-    return null;
-  }
-
-  public Boolean addUser(BigInteger userId, BigInteger projectId) {
-    return null;
-  }
-
 
   public BigInteger getProjectId() {
     return projectId;
@@ -78,11 +78,11 @@ public class Project implements ProjectDAO{
     this.endDate = endDate;
   }
 
-  public Boolean getStatus() {
+  public ProjectStatus getStatus() {
     return status;
   }
 
-  public void setStatus(Boolean status) {
+  public void setStatus(ProjectStatus status) {
     this.status = status;
   }
 
@@ -98,7 +98,7 @@ public class Project implements ProjectDAO{
     return users;
   }
 
-  public void setUsers( Collection<User> users) {
+  public void setUsers(Collection<User> users) {
     this.users = users;
   }
 

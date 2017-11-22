@@ -7,9 +7,9 @@ import main.net.cracker.project.model.entity.Task;
 
 public interface TaskDAO {
 
-  Boolean createTask(Task task);
+  void createTask(Task task);
 
-  Boolean updateTask(BigInteger id);
+  void updateTask(BigInteger id);
 
   Collection<Task> findTaskByProjectld(BigInteger id);
 
@@ -20,7 +20,7 @@ public interface TaskDAO {
   Collection<Task> findTaskByPriority(TaskPriority taskPriority,
       BigInteger employeeID);
 
-  Boolean findTaskByStatusAndUserId(String status, BigInteger id);
+  Task findTaskByStatusAndUserId(String status, BigInteger id);
 
   String updateStatus(TaskStatus status);
 

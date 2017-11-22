@@ -1,9 +1,11 @@
 package main.net.cracker.project.model.entity;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Date;
+import main.net.cracker.project.model.BusinessTripDAO;
 
-public class BusinessTrip {
+public class BusinessTrip implements BusinessTripDAO {
 
   private BigInteger businessTripId;
   private BigInteger projectId;
@@ -13,7 +15,7 @@ public class BusinessTrip {
   private String country;
   private Date startDate;
   private Date endDate;
-  private Boolean status;
+  private Status status;
 
   public BigInteger getBusinessTripId() {
     return businessTripId;
@@ -79,11 +81,27 @@ public class BusinessTrip {
     this.endDate = endDate;
   }
 
-  public Boolean getStatus() {
+  public Status getStatus() {
     return status;
   }
 
-  public void setStatus(Boolean status) {
+  public void setStatus(Status status) {
     this.status = status;
+  }
+
+  public void createTrip(BusinessTrip trip) {
+
+  }
+
+  public void updateTrip(BigInteger id, BusinessTrip trip) {
+
+  }
+
+  public Collection<BusinessTrip> findTripByUserld(BigInteger id) {
+    return null;
+  }
+
+  public BusinessTrip findTripByProjectId(BigInteger id) {
+    return null;
   }
 }
