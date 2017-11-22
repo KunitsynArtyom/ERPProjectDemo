@@ -6,7 +6,7 @@ import main.net.cracker.project.model.entity.Project;
 
 public interface ProjectDAO {
 
-  Boolean createProject(Project project);
+  void createProject(Project project);
 
   Project findProjectByProjectId(BigInteger id);
 
@@ -14,22 +14,23 @@ public interface ProjectDAO {
 
   Project findProjectByDate(Date startDate);
 
-  Boolean deleteUserByUserId(BigInteger userId, BigInteger projectID);
+  void deleteUserByUserId(BigInteger userId, BigInteger projectID);
 
-  Boolean updateProject(BigInteger id, Project project);
+  void updateProject(BigInteger id, Project project);
 
-  Boolean addUser(BigInteger userId, BigInteger projectId);
+  void addUser(BigInteger userId, BigInteger projectId);
 
-  class Sprint {
+  enum ProjectStatus {
+    OPEN, CLOSED;
 
-    BigInteger sprintId;
-    String name;
-    Date startDate;
-    Date endDate;
+    private Integer id;
 
-    Sprint(BigInteger sprintId, String name, Date startDate,
-        Date endDate) {
+    ProjectStatus(Integer id) {
+      this.id = id;
     }
 
+    ProjectStatus() {
+      this.id = 0;
+    }
   }
 }

@@ -9,19 +9,19 @@ public interface UserDAO {
 
   User createUser(User user);
 
-  Boolean updateUser(BigInteger id, User user);
+  void updateUser(BigInteger id, User user);
 
   User findUserByUserId(BigInteger id);
 
   User findUserByLogin(String login);
 
-  Boolean updatePhoneNumber(BigInteger id, String phoneNumber);
+  void updatePhoneNumber(BigInteger id, String phoneNumber);
 
-  Boolean updateEmail(BigInteger id, String email);
+  void updateEmail(BigInteger id, String email);
 
-  Boolean updatePassword(BigInteger id, String password);
+  void updatePassword(BigInteger id, String password);
 
-  Boolean updatePhoto(BigInteger id, File photo);
+  void updatePhoto(BigInteger id, File photo);
 
   void updateWorkingPeriodByUserId(BigInteger userId, BigInteger projectId);
 
@@ -35,6 +35,34 @@ public interface UserDAO {
     }
 
     JobTitle() {
+      this.id = 0;
+    }
+  }
+
+  enum ProjectStatus {
+    WORKING, TRANSIT;
+
+    private Integer id;
+
+    ProjectStatus(Integer id) {
+      this.id = id;
+    }
+
+    ProjectStatus() {
+      this.id = 0;
+    }
+  }
+
+  enum Status {
+    WORKING, FIRED;
+
+    private Integer id;
+
+    Status(Integer id) {
+      this.id = id;
+    }
+
+    Status() {
       this.id = 0;
     }
   }
@@ -55,4 +83,6 @@ public interface UserDAO {
       this.endWorkDate = endWorkDate;
     }
   }
+
+
 }

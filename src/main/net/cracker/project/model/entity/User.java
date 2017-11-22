@@ -1,19 +1,19 @@
 package main.net.cracker.project.model.entity;
 
+import java.io.File;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Date;
+import main.net.cracker.project.model.UserDAO;
 import main.net.cracker.project.model.UserDAO.WorkPeriod;
 
-public class User {
+public class User implements UserDAO{
   private BigInteger userId;
   private String firstName;
   private String lastName;
   private String email;
   private Date dateOfBirth;
   private Date hireDate;
-
-
   private String phoneNumber;
   private String photo;
   private JobTitle jobTitle;
@@ -135,6 +135,43 @@ public class User {
 
   public void setProjectStatus(Boolean projectStatus) {
     this.projectStatus = projectStatus;
+  }
+
+  public User createUser(User user) {
+    return null;
+  }
+
+  public void updateUser(BigInteger id, User user) {
+
+  }
+
+  public User findUserByUserId(BigInteger id) {
+    return null;
+  }
+
+  public User findUserByLogin(String login) {
+    return null;
+  }
+
+  public void updatePhoneNumber(BigInteger id, String phoneNumber) {
+
+  }
+
+  public void updateEmail(BigInteger id, String email) {
+
+  }
+
+  public void updatePassword(BigInteger id, String password) {
+
+  }
+
+  public void updatePhoto(BigInteger id, File photo) {
+
+  }
+
+  public void updateWorkingPeriodByUserId(BigInteger userId,
+      BigInteger projectId) {
+
   }
 
   private class JobTitle {

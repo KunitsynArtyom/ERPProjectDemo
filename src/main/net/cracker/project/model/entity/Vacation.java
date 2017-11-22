@@ -1,16 +1,19 @@
 package main.net.cracker.project.model.entity;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Date;
+import main.net.cracker.project.model.VacationDAO;
 
-public class Vacation {
+public class Vacation implements VacationDAO {
+
   private BigInteger vacationId;
   private BigInteger userId;
   private BigInteger projectId;
   private Date startDate;
   private Date endDate;
-  private Boolean pmStatus;
-  private Boolean lmStatus;
+  private Status pmStatus;
+  private Status lmStatus;
   private BigInteger pmId;
   private BigInteger lmId;
 
@@ -55,19 +58,19 @@ public class Vacation {
     this.endDate = endDate;
   }
 
-  public Boolean getPmStatus() {
+  public Status getPmStatus() {
     return pmStatus;
   }
 
-  public void setPmStatus(Boolean pmStatus) {
+  public void setPmStatus(Status pmStatus) {
     this.pmStatus = pmStatus;
   }
 
-  public Boolean getLmStatus() {
+  public Status getLmStatus() {
     return lmStatus;
   }
 
-  public void setLmStatus(Boolean lmStatus) {
+  public void setLmStatus(Status lmStatus) {
     this.lmStatus = lmStatus;
   }
 
@@ -85,5 +88,31 @@ public class Vacation {
 
   public void setLmId(BigInteger lmId) {
     this.lmId = lmId;
+  }
+
+  public void createVacation(Vacation vacation) {
+
+  }
+
+  public void updateVacation(BigInteger id, Vacation vacation) {
+
+  }
+
+  public Vacation findVacationByUserId(BigInteger id) {
+    return null;
+  }
+
+  public Vacation findVacationByProjectId(BigInteger id) {
+    return null;
+  }
+
+  public Collection<Vacation> findVacationByUserIdAndPmStatus(BigInteger id,
+      Boolean status) {
+    return null;
+  }
+
+  public Collection<Vacation> findVacationByUserIdAndLmStatus(BigInteger id,
+      Boolean status) {
+    return null;
   }
 }

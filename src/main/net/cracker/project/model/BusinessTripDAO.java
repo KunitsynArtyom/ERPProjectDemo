@@ -6,9 +6,9 @@ import main.net.cracker.project.model.entity.BusinessTrip;
 
 public interface BusinessTripDAO {
 
-  Boolean createTrip(BusinessTrip trip);
+  void createTrip(BusinessTrip trip);
 
-  Boolean updateTrip(BigInteger id, BusinessTrip trip);
+  void updateTrip(BigInteger id, BusinessTrip trip);
 
   Collection<BusinessTrip> findTripByUserld(BigInteger id);
 
